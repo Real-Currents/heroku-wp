@@ -12,3 +12,4 @@ org/
 pg4wp2/
 *.wpress
 *.zip
+.env
