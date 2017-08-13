@@ -10,6 +10,7 @@ healing2017/
 media/
 org/
 pg4wp2/
+*.env
+*.idea
 *.wpress
 *.zip
-.env
