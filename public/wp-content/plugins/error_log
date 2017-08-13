@@ -1,0 +1,4 @@
+[20-Jan-2017 11:00:27 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home4/hhwilson/public_html/wp-content/plugins/hello.php on line 60
+[27-Feb-2017 10:33:40 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home4/hhwilson/public_html/wp-content/plugins/hello.php on line 60
+[25-Apr-2017 11:20:29 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home4/hhwilson/public_html/wp-content/plugins/hello.php on line 60
+[25-Apr-2017 14:26:24 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home4/hhwilson/public_html/wp-content/plugins/hello.php on line 60

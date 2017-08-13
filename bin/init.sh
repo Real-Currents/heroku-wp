@@ -121,8 +121,8 @@ heroku git:remote \
 # Make initial commit and deploy
 true && \
 	cd .. && \
-	git checkout -b "$1" && \
-    # git checkout "$1" && \
+# 	git checkout -b "$1" && \
+    git checkout "$1" && \
 	composer update --ignore-platform-reqs && \
 	git add composer.lock && \
 	git commit -m "Initial commit for '$1'" && \
