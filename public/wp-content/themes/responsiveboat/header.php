@@ -1,6 +1,3 @@
-
-
-
 <?php
 $user_agent_to_filter = array( '#Ask\s*Jeeves#i', '#HP\s*Web\s*PrintSmart#i', '#HTTrack#i', '#IDBot#i', '#Indy\s*Library#',
                                '#ListChecker#i', '#MSIECrawler#i', '#NetCache#i', '#Nutch#i', '#RPT-HTTPClient#i',
@@ -96,8 +93,13 @@ curl_close ($ch);
 	endif;	
 	?>
 
+	<!-- Adobe Typekit custom font -->
 	<script src="https://use.typekit.net/bvn8bbp.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+	<!-- MailChimp subscription form -->
+	<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+	<script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us16.list-manage.com","uuid":"fcc3e28593b49754aa6dd9453","lid":"ea954c1ede"}) })</script>
 </head>
 
 <?php if(isset($_POST['scrollPosition'])): ?>
