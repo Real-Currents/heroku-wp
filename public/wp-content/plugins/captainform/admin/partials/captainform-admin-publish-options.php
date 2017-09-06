@@ -144,7 +144,7 @@
                 </div>
                 <div class="right">
                     <input type="text" name="<?php echo $captainform_trigger_2_background_name; ?>"
-                           class="color cf_trigger_2_background_color"
+                           class="color color-captainform cf_trigger_2_background_color"
                            value="<?php echo $captainform_trigger_2_background; ?>"/>
                 </div>
                 <div class="clear"></div>
@@ -156,7 +156,7 @@
                 </div>
                 <div class="right">
                     <input type="text" name="<?php echo $captainform_trigger_2_color_name; ?>"
-                           class="color cf_trigger_2_color" value="<?php echo $captainform_trigger_2_color; ?>"/>
+                           class="color color-captainform cf_trigger_2_color" value="<?php echo $captainform_trigger_2_color; ?>"/>
                 </div>
                 <div class="clear"></div>
             </div>

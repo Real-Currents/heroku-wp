@@ -481,6 +481,9 @@ We support MasterCard, Visa, PayPal, American Express, JCB, Discover/Novus and D
 To downgrade the plugin, click on the Downgrade button under our Regular plan and fill out the cancellation form. All premium features will be deactivated, but you can upgrade again at any time by purchasing a new license key.
 
 == Changelog ==
+= 2.2.6 (22 August 2017) =
+* Fixed conflict with the color picker in Avada theme v5.2.1
+
 = 2.2.5 (9 May 2017) =
 * Updates for compatibility with SEO Redirection Plugin
 

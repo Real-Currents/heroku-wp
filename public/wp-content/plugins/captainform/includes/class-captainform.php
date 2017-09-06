@@ -105,7 +105,7 @@ class Captainform {
 	public function __construct() {
 
 		$this->plugin_name = 'captainform';
-		$this->version = '2.2.5';
+		$this->version = '2.2.6';
 
 		$this->load_dependencies();
 		$this->set_locale();
