@@ -110,7 +110,12 @@ curl_close ($ch);
 
 	<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
-<?php endif;
+<?php endif; ?>
+<div id="wpadminbar" class="nojq nojs"><span class="alert" style="color: #FFF; font-weight: bold; font-variant: small-caps; font-size: 12pt;">
+    Thanks to all of our 2017 conference pariticpants and presenters!
+</div>
+<?php
+
 
 if( function_exists('zerif_top_body_trigger') ):
 	zerif_top_body_trigger();
