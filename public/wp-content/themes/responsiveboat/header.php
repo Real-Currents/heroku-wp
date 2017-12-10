@@ -111,8 +111,8 @@ curl_close ($ch);
 	<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
 <?php endif; ?>
-<div id="wpadminbar" class="nojq nojs"><span class="alert" style="color: #FFF; font-weight: bold; font-variant: small-caps; font-size: 12pt;">
-    Thanks to all of our 2017 conference pariticpants and presenters!
+<div id="wpadminbar" class="nojq nojs"><span class="alert" style="background-color:#000;color:#FFF;font-weight:bold;font-variant:small-caps;font-size:12pt;">
+        Thanks to all of our 2017 conference pariticpants and presenters!</span>
 </div>
 <?php
 
