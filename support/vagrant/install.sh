@@ -1,7 +1,7 @@
 #!/bin/bash
 
-MYSQL_PASSWORD="password"
 MYSQL_USERNAME="herokuwp"
+MYSQL_PASSWORD="password"
 
 #
 # End Config
@@ -106,16 +106,7 @@ sudo -H -u vagrant composer --working-dir=/app install
 # Start Daemon To Rebuild On Change
 #
 
-start-stop-daemon \
-  --start \
-  --oknodo \
-  --user root \
-  --name rebuild \
-  --pidfile /var/run/rebuild.pid \
-  --startas /app/support/vagrant/rebuild \
-  --chuid root \
-  --make-pidfile /var/run/rebuild.pid \
-  --background
+start-stop-daemon --start --oknodo --user root --name rebuild --pidfile /var/run/rebuild.pid --startas /app/support/vagrant/rebuild --chuid root --make-pidfile /var/run/rebuild.pid --background
 
 #
 # Stop Daemon Example:

@@ -1,7 +1,6 @@
-/bin/composer
-/bin/composer-setup.php
-/bin/iron-worker.tmp
-/public.built/
+/audio/
+/bin/
+/pub*/
 /tmp/
 /vendor/
 /.vagrant/
@@ -10,7 +9,12 @@ healing2017/
 media/
 org/
 pg4wp2/
+*.bak
 *.env
 *.idea
+*.pdf
 *.wpress
 *.zip
+
+default.html
+index.htm

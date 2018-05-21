@@ -9,22 +9,30 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # config.vm.box = "bento/ubuntu-16.04"
-  config.vm.box = "lipro/ubuntu-16.04-docker"
+  config.vm.box = "kbi/ubuntu16.04"
+  config.vm.guest = :ubuntu
+  config.vm.hostname = "herokuwp"
 
-  config.vm.provider :vmare_workstation # do |vmware| # do |vb|
+  config.vm.provider "libvirt" do |lv|
+    lv.memory = "1024"
+  end
+
+  #config.vm.provider :virtualbox do |vb|
     # # Display the VirtualBox GUI when booting the machine
     # vb.gui = true
     #
     # # Customize the amount of memory on the VM:
     # vb.memory = "1024"
+  #end
 
+  #config.vm.provider :vmare_workstation # do |vmware| # do |vb|
     # # Configure networking on vmware vm:
     # vmware.vmx["ethernet0.pcislotnumber"] = "33"
   #end
 
   config.vm.network :forwarded_port, auto_correct: true, guest: 80, host: 8080
 
-  config.vm.synced_folder ".", "/app"
+  config.vm.synced_folder ".", "/app", type: "rsync", rsync__args: "--exclude-from=.gitignore"
 
   # Use password auth
   config.ssh.username = "vagrant"
