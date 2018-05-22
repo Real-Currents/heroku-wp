@@ -18,11 +18,10 @@
         "WordPress/WordPress": "*",
 
         "automattic/batcache": "dev-master",
-        "wpackagist-plugin/redis-cache": "~1",
-        "wpackagist-plugin/secure-db-connection": "~1",
+        "wpackagist-plugin/redis-cache": "*",
+        "wpackagist-plugin/secure-db-connection": "*",
 
         "humanmade/s3-uploads": "~1",
-        "wpackagist-plugin/authy-two-factor-authentication": "~3",
         "wpackagist-plugin/jetpack": "~5",
         "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1",
 
@@ -60,13 +59,13 @@
     ],
     "extra": {
         "installer-paths": {
-            "vendor/WordPress/WordPress/wp-content/mu-plugins/{$name}/": [
+            "public/wp-content/mu-plugins/{$name}/": [
                 "automattic/batcache",
                 "wpackagist-plugin/redis-cache",
                 "wpackagist-plugin/secure-db-connection"
             ],
-            "vendor/WordPress/WordPress/wp-content/plugins/{$name}/": [ "type:wordpress-plugin" ],
-            "vendor/WordPress/WordPress/wp-content/themes/{$name}/": [ "type:wordpress-theme" ]
+            "public/wp-content/plugins/{$name}/": [ "type:wordpress-plugin" ],
+            "public/wp-content/themes/{$name}/": [ "type:wordpress-theme" ]
         }
     },
     "scripts": {

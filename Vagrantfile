@@ -32,11 +32,28 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network :forwarded_port, auto_correct: true, guest: 80, host: 8080
 
-  config.vm.synced_folder ".", "/app", type: "rsync", rsync__args: "--exclude-from=.gitignore"
+  config.vm.synced_folder ".", "/app", type: "rsync", rsync__exclude: %W[
+    /audio/
+    /bin/
+    /tmp/
+    /vendor/
+    /.vagrant/
+    dc4cj2016/
+    healing2017/
+    media/
+    org/
+    pg4wp2/
+    *.bak
+    *.env
+    *.idea
+    *.pdf
+    *.wpress
+    *.zip
+]
 
   # Use password auth
-  config.ssh.username = "vagrant"
-  config.ssh.password = "vagrant"
+  # config.ssh.username = "vagrant"
+  # config.ssh.password = "vagrant"
 
   # Manage our hostfile for us
   if Vagrant.has_plugin?("vagrant-hostmanager")
