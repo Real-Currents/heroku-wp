@@ -29,9 +29,17 @@ apt-get update -y
 # Install PHP
 #
 
+apt-get install -y build-essential openssl libgd-dev libpng-dev libjpeg-dev libwebp-dev libssl-dev libxml2-dev zlib1g-dev libcurl4-openssl-dev pkg-config
+apt-get install -y nano
 apt-get install -y php7.0
 apt-get install -y php7.0-gd
 apt-get install -y php7.0-mysql
+cd /app/php
+./configure --enable-libgcc --with-libdir=/lib/x86_64-linux-gnu --with-gd --with-png-dir --with-jpeg-dir --with-webp-dir --with-openssl
+make
+make install && update-alternatives --install /usr/bin/php php /usr/local/bin/php 1
+echo $(php -v)
+cd /app
 
 #
 # Install MySQL
@@ -78,7 +86,7 @@ apt-get install -y unzip
 # Make Some Swap (1GB)
 #
 
-/bin/dd if=/dev/zero of=/var/swap bs=1M count=1024
+/bin/dd if=/dev/zero of=/var/swap bs=1M count=8192
 chmod 600 /var/swap
 /sbin/mkswap /var/swap
 /sbin/swapon /var/swap
@@ -93,7 +101,7 @@ cp -a /app/support/vagrant/root/* /
 # Build Heroku-WP
 #
 
-composer --working-dir=/app install
+su -c 'composer --working-dir=/app update' vagrant
 
 #
 # Restart Services

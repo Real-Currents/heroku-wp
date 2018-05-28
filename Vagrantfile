@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "herokuwp"
 
   config.vm.provider "libvirt" do |lv|
-    lv.memory = "1024"
+    lv.memory = "2048"
   end
 
   #config.vm.provider :virtualbox do |vb|
@@ -36,7 +36,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     /audio/
     /bin/
     /tmp/
-    /vendor/
     /.vagrant/
     dc4cj2016/
     healing2017/

@@ -1,5 +1,6 @@
 /audio/
 /bin/
+/php/
 /tmp/
 /vendor/
 /.vagrant/
@@ -16,4 +17,3 @@ pg4wp2/
 *.zip
 
 default.html
-index.htm
