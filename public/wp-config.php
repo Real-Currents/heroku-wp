@@ -17,6 +17,11 @@
 // Setup autoload
 require '/app/vendor/autoload.php';
 
+ini_set('display_errors','Off');
+ini_set('error_reporting', E_ALL );
+define('WP_DEBUG', false);
+define('WP_DEBUG_DISPLAY', false);
+
 // Disable filesystem level changes from WP
 define( 'DISALLOW_FILE_EDIT', true );
 define( 'DISALLOW_FILE_MODS', true );
@@ -34,7 +39,8 @@ define( 'JETPACK_SIGNATURE__HTTPS_PORT', 80 );
 if ( !empty( $_ENV['REDIS_URL'] ) ) {
 	$_redissettings = parse_url( $_ENV['REDIS_URL'] );
 
-	define( 'WP_CACHE', true );
+	define('WP_CACHE', false);
+	//define( 'WP_CACHE', true );
 	define( 'WP_REDIS_CLIENT',   'predis'                  );
 	define( 'WP_REDIS_SCHEME',   $_redissettings['scheme'] );
 	define( 'WP_REDIS_HOST',     $_redissettings['host']   );
