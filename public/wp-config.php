@@ -14,6 +14,8 @@
  * @package WordPress
  */
 
+error_reporting(E_ERROR);
+
 // Setup autoload
 require '/app/vendor/autoload.php';
 
