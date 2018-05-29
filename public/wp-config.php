@@ -34,7 +34,8 @@ define( 'JETPACK_SIGNATURE__HTTPS_PORT', 80 );
 if ( !empty( $_ENV['REDIS_URL'] ) ) {
 	$_redissettings = parse_url( $_ENV['REDIS_URL'] );
 
-	define( 'WP_CACHE', true );
+	define('WP_CACHE', false);
+	//define( 'WP_CACHE', true );
 	define( 'WP_REDIS_CLIENT',   'predis'                  );
 	define( 'WP_REDIS_SCHEME',   $_redissettings['scheme'] );
 	define( 'WP_REDIS_HOST',     $_redissettings['host']   );
