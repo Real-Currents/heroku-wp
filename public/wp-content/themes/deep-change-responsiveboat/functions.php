@@ -39,7 +39,7 @@ function responsiveboat_customize_register( $wp_customize ) {
 	
 		$wp_customize->add_setting( 'rb_bigtitle_logo', array('sanitize_callback' => 'esc_url_raw' , 'default' => get_stylesheet_directory_uri().'/images/logo-small.png'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'rb_bigtitle_logo', array(
-			'label'    => __( 'Header Logo', 'responsiveboat' ),
+			'label'    => __( 'Header Logo', 'deep-change-responsiveboat' ),
 			'section'  => 'zerif_bigtitle_texts_section',
 			'priority'    => 7,
 		)));
@@ -48,7 +48,7 @@ function responsiveboat_customize_register( $wp_customize ) {
 	
 		$wp_customize->add_setting( 'rb_bigtitle_logo', array('sanitize_callback' => 'esc_url_raw' , 'default' => get_stylesheet_directory_uri().'/images/logo-small.png'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'rb_bigtitle_logo', array(
-			'label'    => __( 'Header Logo', 'responsiveboat' ),
+			'label'    => __( 'Header Logo', 'deep-change-responsiveboat' ),
 			'section'  => 'zerif_bigtitle_section',
 			'priority'    => 7,
 		)));
@@ -60,7 +60,7 @@ function responsiveboat_customize_register( $wp_customize ) {
     /*************************************/
 
     $wp_customize->add_section( 'rb_aboutyou_section' , array(
-        'title'       => __( 'About you section', 'responsiveboat' ),
+        'title'       => __( 'About you section', 'deep-change-responsiveboat' ),
         'priority'    => 34
     ));
 
@@ -70,32 +70,32 @@ function responsiveboat_customize_register( $wp_customize ) {
         'rb_aboutyou_show',
         array(
             'type' => 'checkbox',
-            'label' => __('Hide about you section?','responsiveboat'),
+            'label' => __('Hide about you section?','deep-change-responsiveboat'),
             'section' => 'rb_aboutyou_section',
             'priority'    => 1,
         )
     );
 
     /* title */
-    $wp_customize->add_setting( 'rb_aboutyou_title', array('sanitize_callback' => 'responsiveboat_sanitize_text','default' => __('About you','responsiveboat')));
+    $wp_customize->add_setting( 'rb_aboutyou_title', array('sanitize_callback' => 'responsiveboat_sanitize_text','default' => __('About you','deep-change-responsiveboat')));
     $wp_customize->add_control( 'rb_aboutyou_title', array(
-        'label'    => __( 'Title', 'responsiveboat' ),
+        'label'    => __( 'Title', 'deep-change-responsiveboat' ),
         'section'  => 'rb_aboutyou_section',
         'priority'    => 2,
     ));
 
     /* subtitle */
-    $wp_customize->add_setting( 'rb_aboutyou_subtitle', array('sanitize_callback' => 'responsiveboat_sanitize_text','default' => __('Use this section to showcase important details about you.','responsiveboat')));
+    $wp_customize->add_setting( 'rb_aboutyou_subtitle', array('sanitize_callback' => 'responsiveboat_sanitize_text','default' => __('Use this section to showcase important details about you.','deep-change-responsiveboat')));
     $wp_customize->add_control( 'rb_aboutyou_subtitle', array(
-        'label'    => __( 'Subtitle', 'responsiveboat' ),
+        'label'    => __( 'Subtitle', 'deep-change-responsiveboat' ),
         'section'  => 'rb_aboutyou_section',
         'priority'    => 3,
     ));
 
     /* text */
-    $wp_customize->add_setting( 'rb_aboutyou_text', array('sanitize_callback' => 'responsiveboat_sanitize_text','default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','responsiveboat')));
+    $wp_customize->add_setting( 'rb_aboutyou_text', array('sanitize_callback' => 'responsiveboat_sanitize_text','default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','deep-change-responsiveboat')));
     $wp_customize->add_control( 'rb_aboutyou_text', array(
-        'label'    => __( 'Text', 'responsiveboat' ),
+        'label'    => __( 'Text', 'deep-change-responsiveboat' ),
         'section'  => 'rb_aboutyou_section',
         'priority'    => 4,
     ));
@@ -103,7 +103,7 @@ function responsiveboat_customize_register( $wp_customize ) {
     /* image */
     $wp_customize->add_setting( 'rb_aboutyou_image', array('sanitize_callback' => 'esc_url_raw' , 'default' => get_stylesheet_directory_uri().'/images/about.jpg'));
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'rb_aboutyou_image', array(
-        'label'    => __( 'Image', 'responsiveboat' ),
+        'label'    => __( 'Image', 'deep-change-responsiveboat' ),
         'section'  => 'rb_aboutyou_section',
         'priority'    => 5,
     )));
@@ -119,15 +119,15 @@ function responsiveboat_sanitize_text( $input ) {
 add_action( 'wp_enqueue_scripts', 'responsiveboat_enqueue_styles' );
 function responsiveboat_enqueue_styles() {
 
-	wp_enqueue_style( 'responsiveboat-font', '//fonts.googleapis.com/css?family=Titillium+Web:400,300,300italic,200italic,200,400italic,600,600italic,700,700italic,900');
+	wp_enqueue_style( 'deep-change-responsiveboat-font', '//fonts.googleapis.com/css?family=Titillium+Web:400,300,300italic,200italic,200,400italic,600,600italic,700,700italic,900');
 
-	wp_enqueue_style( 'responsiveboat-style', get_template_directory_uri() . '/style.css', array('zerif_bootstrap_style') );
+	wp_enqueue_style( 'deep-change-responsiveboat-style', get_template_directory_uri() . '/style.css', array('zerif_bootstrap_style') );
 
 }
 
 function responsiveboat_custom_script_fix1()
 {
-	wp_enqueue_script('responsiveboat-script', get_stylesheet_directory_uri() . '/js/responsive_boat_script.js', array(), '201202067', true);
+	wp_enqueue_script('deep-change-responsiveboat-script', get_stylesheet_directory_uri() . '/js/responsive_boat_script.js', array(), '201202067', true);
 }
 add_action( 'wp_enqueue_scripts', 'responsiveboat_custom_script_fix1' );
 

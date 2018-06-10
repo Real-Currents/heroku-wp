@@ -23,7 +23,7 @@ function deep_change_setup() {
      * If you're building a theme based on zerif, use a find and replace
      * to change 'zerif-lite' to the name of your theme in all the template files
      */
-    load_theme_textdomain('deep-change-responsiveboat', get_template_directory() . '/languages');
+    load_theme_textdomain('deep-change-deep-change-responsiveboat', get_template_directory() . '/languages');
 
 }
 

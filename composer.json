@@ -68,7 +68,9 @@
             "public/wp-content/plugins/{$name}/": [
                 "type:wordpress-plugin"
             ],
-            "public/wp-content/themes/{$name}/": [ "type:wordpress-theme" ]
+            "public/wp-content/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
         }
     },
     "scripts": {
