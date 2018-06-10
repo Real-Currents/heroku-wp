@@ -50,6 +50,8 @@ echo "mysql-server mysql-server/root_password password $MYSQL_PASSWORD" | \
 echo "mysql-server mysql-server/root_password_again password $MYSQL_PASSWORD" | \
   debconf-set-selections
 
+#cp -r /app/support/vagrant/root/etc/mysql /etc/
+
 apt-get install -y mysql-server
 
 echo "CREATE USER '$MYSQL_USERNAME'@'127.0.0.1' IDENTIFIED BY '$MYSQL_PASSWORD'" | \
@@ -115,6 +117,14 @@ su -c 'composer --working-dir=/app update' vagrant
 #
 
 start-stop-daemon --start --oknodo --user root --name rebuild --pidfile /var/run/rebuild.pid --startas /app/support/vagrant/rebuild --chuid root --make-pidfile /var/run/rebuild.pid --background
+
+
+#
+# Allow group write
+#
+
+chgrp -R www-data /app/
+chmod -R g+rw /app/
 
 #
 # Stop Daemon Example:

@@ -20,6 +20,7 @@
         "automattic/batcache": "dev-master",
         "wpackagist-plugin/redis-cache": "*",
         "wpackagist-plugin/secure-db-connection": "*",
+        "wpackagist-plugin/customizer-export-import": "^0.7.0",
 
         "humanmade/s3-uploads": "~1",
         "wpackagist-plugin/jetpack": "~5",
@@ -64,7 +65,9 @@
                 "wpackagist-plugin/redis-cache",
                 "wpackagist-plugin/secure-db-connection"
             ],
-            "public/wp-content/plugins/{$name}/": [ "type:wordpress-plugin" ],
+            "public/wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
             "public/wp-content/themes/{$name}/": [ "type:wordpress-theme" ]
         }
     },
