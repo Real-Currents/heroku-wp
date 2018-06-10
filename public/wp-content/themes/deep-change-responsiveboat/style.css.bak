@@ -1,0 +1,14 @@
+/*
+Theme Name: Deep Change ResponsiveBoat
+Theme URI: http://www.deep-change.org/theme
+Author: John <john@real-currents.com>
+Author URI: http://www.real-currents.com
+Description: Deep Change conference website theme; based on ResponsiveBoat
+Template: zerif-lite
+Version: 1.0.0
+License: GNU General Public License version 3
+License URI: license.txt
+Text Domain: deep-change-zerif-lite
+Domain Path: /languages/
+Tags: one-column, two-columns, right-sidebar,front-page-post-form,full-width-template,rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, editor-style, featured-images, threaded-comments, translation-ready, footer-widgets, portfolio
+*/
