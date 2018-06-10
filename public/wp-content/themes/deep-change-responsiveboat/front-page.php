@@ -206,11 +206,11 @@ else {
 
 	<?php
 
-		$section1 = get_theme_mod('section4','about_us');
-		$section2 = get_theme_mod('section5','our_team');
-		$section3 = get_theme_mod('section1','our_focus');
-		$section4 = get_theme_mod('section2','bottom_ribbon');
-		$section5 = get_theme_mod('section3','portofolio');
+		$section1 = get_theme_mod('section1','about_us');
+		$section2 = get_theme_mod('section2','our_team');
+		$section3 = get_theme_mod('section3','our_focus');
+		$section4 = get_theme_mod('section4','bottom_ribbon');
+		$section5 = get_theme_mod('section5','portofolio');
 		$section6 = get_theme_mod('section6','testimonials');
 		$section7 = get_theme_mod('section7','right_ribbon');
 		$section8 = get_theme_mod('section8','contact_us');
@@ -515,16 +515,6 @@ else {
 
 		<?php
 
-			/* OUR FOCUS SECTION */
-			$zerif_ourfocus_show = get_theme_mod('zerif_ourfocus_show');
-
-			if( isset($zerif_ourfocus_show) && $zerif_ourfocus_show != 1 ):
-				include get_template_directory() . "/sections/our_focus.php";
-			endif;
-
-			/* RIBBON WITH BOTTOM BUTTON */
-			include get_template_directory() . "/sections/ribbon_with_bottom_button.php";
-
 			/* ABOUT YOU */
 			$rb_aboutyou_show = get_theme_mod('rb_aboutyou_show');
 			if( isset($rb_aboutyou_show) && $rb_aboutyou_show != 1 ):
@@ -539,6 +529,16 @@ else {
 				include get_template_directory() . "/sections/our_team.php";
 			endif;
 
+
+			/* OUR FOCUS SECTION */
+			$zerif_ourfocus_show = get_theme_mod('zerif_ourfocus_show');
+
+			if( isset($zerif_ourfocus_show) && $zerif_ourfocus_show != 1 ):
+				include get_template_directory() . "/sections/our_focus.php";
+			endif;
+
+			/* RIBBON WITH BOTTOM BUTTON */
+			include get_template_directory() . "/sections/ribbon_with_bottom_button.php";
 
 			/* TESTIMONIALS */
 			$zerif_testimonials_show = get_theme_mod('zerif_testimonials_show');
