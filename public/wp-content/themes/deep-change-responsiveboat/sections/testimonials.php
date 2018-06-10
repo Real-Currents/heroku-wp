@@ -126,7 +126,7 @@ else:
 			echo '<div class="section-header">';
 
 				/* title */
-				$zerif_testimonials_title = get_theme_mod('zerif_testimonials_title',__('Testimonials','responsiveboat'));
+				$zerif_testimonials_title = get_theme_mod('zerif_testimonials_title',__('Testimonials','deep-change-responsiveboat'));
 
 				if( !empty($zerif_testimonials_title) ):
 					echo '<h2 class="black-text">'.esc_attr( $zerif_testimonials_title ).'</h2>';

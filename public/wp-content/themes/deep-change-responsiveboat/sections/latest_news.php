@@ -85,7 +85,7 @@ if( !empty($zerif_total_posts) && ($zerif_total_posts > 0) ):
 									echo '<div class="rb-latest-news-content-outer">';
 										echo '<div class="rb-latest-news-content-inner">';
 											echo '<h3>'.get_the_title().'</h3>';
-											echo '<a href="'.get_permalink().'" class="rb-latest-news-read-more">'.__('Read full article','responsiveboat').'</a>';
+											echo '<a href="'.get_permalink().'" class="rb-latest-news-read-more">'.__('Read full article','deep-change-responsiveboat').'</a>';
 										echo '</div>';
 									echo '</div>';
 								echo '</span>';
@@ -128,7 +128,7 @@ if( !empty($zerif_total_posts) && ($zerif_total_posts > 0) ):
 				if( !empty($zerif_latestnews_title) ):
 					echo '<h2 class="dark-text">' . $zerif_latestnews_title . '</h2>';
 				else:
-					echo '<h2 class="dark-text">' . __('Latest news','responsiveboat') . '</h2>';
+					echo '<h2 class="dark-text">' . __('Latest news','deep-change-responsiveboat') . '</h2>';
 				endif;
 
 				/* subtitle */
@@ -175,7 +175,7 @@ if( !empty($zerif_total_posts) && ($zerif_total_posts > 0) ):
 								echo '<div class="rb-latest-news-content-outer">';
 									echo '<div class="rb-latest-news-content-inner">';
 										echo '<h3>'.get_the_title().'</h3>';
-										echo '<a href="'.get_permalink().'" class="rb-latest-news-read-more">'.__('Read full article','responsiveboat').'</a>';
+										echo '<a href="'.get_permalink().'" class="rb-latest-news-read-more">'.__('Read full article','deep-change-responsiveboat').'</a>';
 									echo '</div>';
 								echo '</div>';
 							echo '</span>';
