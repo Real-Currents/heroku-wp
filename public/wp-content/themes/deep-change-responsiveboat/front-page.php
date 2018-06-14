@@ -209,10 +209,10 @@ else {
 		$section1 = get_theme_mod('section1','our_team');
 		$section2 = get_theme_mod('section2','our_focus');
 		$section3 = get_theme_mod('section3','bottom_ribbon');
-		$section4 = get_theme_mod('section4','portofolio');
+		$section4 = get_theme_mod('section4','about_us');
 		$section5 = get_theme_mod('section5','testimonials');
-		$section6 = get_theme_mod('section6','right_ribbon');
-		$section7 = get_theme_mod('section7','about_us');
+		$section6 = get_theme_mod('section6','portofolio');
+		$section7 = get_theme_mod('section7','right_ribbon');
 		$section8 = get_theme_mod('section8','contact_us');
 		$section9 = get_theme_mod('section9','map');
 		$section10 = get_theme_mod('section10','packages');
@@ -532,6 +532,12 @@ else {
 			/* RIBBON WITH BOTTOM BUTTON */
 			include get_template_directory() . "/sections/ribbon_with_bottom_button.php";
 
+			/* ABOUT YOU */
+			$rb_aboutyou_show = get_theme_mod('rb_aboutyou_show');
+			if( isset($rb_aboutyou_show) && $rb_aboutyou_show != 1 ):
+				include get_stylesheet_directory() . "/sections/about_you.php";
+			endif;
+
 			/* TESTIMONIALS */
 			$zerif_testimonials_show = get_theme_mod('zerif_testimonials_show');
 
@@ -541,12 +547,6 @@ else {
 
 			/* RIBBON WITH RIGHT SIDE BUTTON */
 			include get_template_directory() . "/sections/ribbon_with_right_button.php";
-
-			/* ABOUT YOU */
-			$rb_aboutyou_show = get_theme_mod('rb_aboutyou_show');
-			if( isset($rb_aboutyou_show) && $rb_aboutyou_show != 1 ):
-				include get_stylesheet_directory() . "/sections/about_you.php";
-			endif;
 
 			/* LATEST NEWS */
 			$zerif_latestnews_show = get_theme_mod('zerif_latestnews_show');
