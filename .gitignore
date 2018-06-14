@@ -10,6 +10,7 @@ media/
 org/
 pg4wp2/
 *.bak
+*.dat
 *.env
 *.idea
 *.pdf
