@@ -1,7 +1,7 @@
 #!/bin/bash
 
-MYSQL_PASSWORD="password"
 MYSQL_USERNAME="herokuwp"
+MYSQL_PASSWORD="password"
 
 #
 # End Config
@@ -12,6 +12,7 @@ echo "## Provisioning Heroku WP VM ##"
 echo "###############################"
 
 cd /app
+ls -l $PWD/*
 
 #
 # Add Nginx:PPA To Apt
@@ -29,9 +30,18 @@ apt-get update -y
 # Install PHP
 #
 
+apt-get install -y build-essential openssl libgd-dev libpng-dev libjpeg-dev libwebp-dev libssl-dev libxml2-dev zlib1g-dev libcurl4-openssl-dev pkg-config
+apt-get install -y nano
 apt-get install -y php7.0
 apt-get install -y php7.0-gd
 apt-get install -y php7.0-mysql
+cd /app/php
+./configure --enable-libgcc --with-libdir=/lib/x86_64-linux-gnu --with-gd --with-png-dir --with-jpeg-dir --with-webp-dir --with-openssl
+make
+make install && update-alternatives --install /usr/bin/php php /usr/local/bin/php 1
+echo $(php -v)
+cd /app
+ls -l $PWD/*
 
 #
 # Install MySQL
@@ -41,6 +51,8 @@ echo "mysql-server mysql-server/root_password password $MYSQL_PASSWORD" | \
   debconf-set-selections
 echo "mysql-server mysql-server/root_password_again password $MYSQL_PASSWORD" | \
   debconf-set-selections
+
+#cp -r /app/support/vagrant/root/etc/mysql /etc/
 
 apt-get install -y mysql-server
 
@@ -78,7 +90,7 @@ apt-get install -y unzip
 # Make Some Swap (1GB)
 #
 
-/bin/dd if=/dev/zero of=/var/swap bs=1M count=1024
+/bin/dd if=/dev/zero of=/var/swap bs=1M count=8192
 chmod 600 /var/swap
 /sbin/mkswap /var/swap
 /sbin/swapon /var/swap
@@ -88,12 +100,22 @@ chmod 600 /var/swap
 #
 
 cp -a /app/support/vagrant/root/* /
+ls -l $PWD/*
 
 #
 # Build Heroku-WP
 #
 
-sudo -H -u vagrant composer --working-dir=/app install
+su -c 'composer --working-dir=/app install' vagrant
+ls -l $PWD/*
+
+#
+# Allow group write
+#
+
+chgrp -R www-data /app/
+chmod -R g+rw /app/
+ls -l $PWD/*
 
 #
 # Restart Services
@@ -106,16 +128,8 @@ sudo -H -u vagrant composer --working-dir=/app install
 # Start Daemon To Rebuild On Change
 #
 
-start-stop-daemon \
-  --start \
-  --oknodo \
-  --user root \
-  --name rebuild \
-  --pidfile /var/run/rebuild.pid \
-  --startas /app/support/vagrant/rebuild \
-  --chuid root \
-  --make-pidfile /var/run/rebuild.pid \
-  --background
+start-stop-daemon --start --oknodo --user root --name rebuild --pidfile /var/run/rebuild.pid --startas /app/support/vagrant/rebuild --chuid root --make-pidfile /var/run/rebuild.pid --background
+ls -l $PWD/*
 
 #
 # Stop Daemon Example:
