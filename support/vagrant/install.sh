@@ -12,6 +12,7 @@ echo "## Provisioning Heroku WP VM ##"
 echo "###############################"
 
 cd /app
+ls -l $PWD/*
 
 #
 # Add Nginx:PPA To Apt
@@ -40,6 +41,7 @@ make
 make install && update-alternatives --install /usr/bin/php php /usr/local/bin/php 1
 echo $(php -v)
 cd /app
+ls -l $PWD/*
 
 #
 # Install MySQL
@@ -98,12 +100,22 @@ chmod 600 /var/swap
 #
 
 cp -a /app/support/vagrant/root/* /
+ls -l $PWD/*
 
 #
 # Build Heroku-WP
 #
 
-su -c 'composer --working-dir=/app update' vagrant
+su -c 'composer --working-dir=/app install' vagrant
+ls -l $PWD/*
+
+#
+# Allow group write
+#
+
+chgrp -R www-data /app/
+chmod -R g+rw /app/
+ls -l $PWD/*
 
 #
 # Restart Services
@@ -117,14 +129,7 @@ su -c 'composer --working-dir=/app update' vagrant
 #
 
 start-stop-daemon --start --oknodo --user root --name rebuild --pidfile /var/run/rebuild.pid --startas /app/support/vagrant/rebuild --chuid root --make-pidfile /var/run/rebuild.pid --background
-
-
-#
-# Allow group write
-#
-
-chgrp -R www-data /app/
-chmod -R g+rw /app/
+ls -l $PWD/*
 
 #
 # Stop Daemon Example:
