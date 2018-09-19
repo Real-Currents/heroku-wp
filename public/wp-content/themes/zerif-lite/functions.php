@@ -528,25 +528,25 @@ function zerif_register_default_widgets() {
 
         /* our team widget #1 */
         $active_widgets[ 'sidebar-ourteam' ][0] = 'zerif_team-widget-' . $zerif_lite_counter;
-        $ourteam_content[ $zerif_lite_counter ] = array ( 'name' => 'ASHLEY SIMMONS', 'position' => 'Project Manager', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'db_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team1.png" );
+        $ourteam_content[ $zerif_lite_counter ] = array ( 'name' => 'ASHLEY SIMMONS', 'link' => 'Project Manager', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'db_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team1.png" );
         update_option( 'widget_zerif_team-widget', $ourteam_content );
         $zerif_lite_counter++;
 
         /* our team widget #2 */
         $active_widgets[ 'sidebar-ourteam' ][] = 'zerif_team-widget-' . $zerif_lite_counter;
-        $ourteam_content[ $zerif_lite_counter ] = array ( 'name' => 'TIMOTHY SPRAY', 'position' => 'Art Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'db_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team2.png" );
+        $ourteam_content[ $zerif_lite_counter ] = array ( 'name' => 'TIMOTHY SPRAY', 'link' => 'Art Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'db_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team2.png" );
         update_option( 'widget_zerif_team-widget', $ourteam_content );
         $zerif_lite_counter++;
 
         /* our team widget #3 */
         $active_widgets[ 'sidebar-ourteam' ][] = 'zerif_team-widget-' . $zerif_lite_counter;
-        $ourteam_content[ $zerif_lite_counter ] = array ( 'name' => 'TONYA GARCIA', 'position' => 'Account Manager', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'db_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team3.png" );
+        $ourteam_content[ $zerif_lite_counter ] = array ( 'name' => 'TONYA GARCIA', 'link' => 'Account Manager', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'db_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team3.png" );
         update_option( 'widget_zerif_team-widget', $ourteam_content );
         $zerif_lite_counter++;
 
         /* our team widget #4 */
         $active_widgets[ 'sidebar-ourteam' ][] = 'zerif_team-widget-' . $zerif_lite_counter;
-        $ourteam_content[ $zerif_lite_counter ] = array ( 'name' => 'JASON LANE', 'position' => 'Business Development', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'db_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team4.png" );
+        $ourteam_content[ $zerif_lite_counter ] = array ( 'name' => 'JASON LANE', 'link' => 'Business Development', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'db_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team4.png" );
         update_option( 'widget_zerif_team-widget', $ourteam_content );
         $zerif_lite_counter++;
 
@@ -990,11 +990,11 @@ class zerif_team_widget extends WP_Widget{
 
 				<?php if( !empty($instance['image_uri']) && ($instance['image_uri'] != 'Upload Image') ) { ?>
 					<figure class="profile-pic">
-    				<?php if( !empty($instance['position']) ) { ?><a href="<?php echo htmlspecialchars_decode(apply_filters('widget_title', $instance['position'])); ?>"><?php } ?>
+    				<?php if( !empty($instance['link']) ) { ?><a href="<?php echo htmlspecialchars_decode(apply_filters('widget_title', $instance['link'])); ?>"><?php } ?>
 
 						<img src="<?php echo esc_url($instance['image_uri']); ?>" alt="<?php _e( 'Uploaded image', 'zerif-lite' ); ?>" />
 
-    				<?php if( !empty($instance['position']) ) { ?></a><?php } ?>
+    				<?php if( !empty($instance['link']) ) { ?></a><?php } ?>
 					</figure>
 				<?php
 					} elseif( !empty($instance['custom_media_id']) ) {
@@ -1017,16 +1017,16 @@ class zerif_team_widget extends WP_Widget{
                 <div class="member-details">
 
 					<?php if( !empty($instance['name']) ): ?>
-    				<?php if( !empty($instance['position']) ) { ?><a href="<?php echo htmlspecialchars_decode(apply_filters('widget_title', $instance['position'])); ?>"><?php } ?>
+    				<?php if( !empty($instance['link']) ) { ?><a href="<?php echo htmlspecialchars_decode(apply_filters('widget_title', $instance['link'])); ?>"><?php } ?>
 
 						<h3 class="dark-text red-border-bottom"><?php echo apply_filters('widget_title', $instance['name']); ?></h3>
 
-    				<?php if( !empty($instance['position']) ) { ?></a><?php } ?>
+    				<?php if( !empty($instance['link']) ) { ?></a><?php } ?>
 					<?php endif; ?>
 
-					<?php if( !empty($instance['position']) ): ?>
+					<?php if( !empty($instance['link']) ): ?>
 
-						<!--div class="position"><?php echo htmlspecialchars_decode(apply_filters('widget_title', $instance['position'])); ?></div-->
+						<!--div class="position"><?php echo htmlspecialchars_decode(apply_filters('widget_title', $instance['link'])); ?></div-->
 
 					<?php endif; ?>
 
@@ -1094,7 +1094,7 @@ class zerif_team_widget extends WP_Widget{
         $instance = $old_instance;
 
         $instance['name'] = strip_tags($new_instance['name']);
-        $instance['position'] = stripslashes(wp_filter_post_kses($new_instance['position']));
+        $instance['link'] = stripslashes(wp_filter_post_kses($new_instance['link']));
         $instance['description'] = stripslashes(wp_filter_post_kses($new_instance['description']));
         $instance['fb_link'] = strip_tags($new_instance['fb_link']);
         $instance['tw_link'] = strip_tags($new_instance['tw_link']);
@@ -1118,8 +1118,8 @@ class zerif_team_widget extends WP_Widget{
             <input type="text" name="<?php echo $this->get_field_name('name'); ?>" id="<?php echo $this->get_field_id('name'); ?>" value="<?php if( !empty($instance['name']) ): echo $instance['name']; endif; ?>" class="widefat"/>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('position'); ?>"><?php _e('Position', 'zerif-lite'); ?></label><br/>
-            <textarea class="widefat" rows="8" cols="20" name="<?php echo $this->get_field_name('position'); ?>" id="<?php echo $this->get_field_id('position'); ?>"><?php if( !empty($instance['position']) ): echo htmlspecialchars_decode($instance['position']); endif; ?></textarea>
+            <label for="<?php echo $this->get_field_id('link'); ?>"><?php _e('link', 'zerif-lite'); ?></label><br/>
+            <textarea class="widefat" rows="8" cols="20" name="<?php echo $this->get_field_name('link'); ?>" id="<?php echo $this->get_field_id('link'); ?>"><?php if( !empty($instance['link']) ): echo htmlspecialchars_decode($instance['link']); endif; ?></textarea>
         </p>
         <p>
             <label for="<?php echo $this->get_field_id('description'); ?>"><?php _e('Description', 'zerif-lite'); ?></label><br/>
