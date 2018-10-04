@@ -14,4 +14,3 @@ sudo docker run --name herokuwp-web --rm -p 127.0.0.1:80:80  \
   --link herokuwp-db:herokuwp --link herokuwp-php:php \
   -v $PWD/support:/app/support:rw  -v $PWD/php:/app/php:ro -v $PWD/support/vagrant/root/etc/ssl:/etc/ssl:ro  -v $PWD/support/vagrant/root/etc/nginx/conf.d:/etc/nginx/conf.d:ro  -v $PWD/public.built:/app/public.built:ro  \
   -d xqdocker/ubuntu-nginx
-gi
