@@ -24,6 +24,7 @@
 
         "humanmade/s3-uploads": "~1",
         "wpackagist-plugin/jetpack": "~5",
+        "wpackagist-plugin/modal-window":"3.2.1",
         "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1",
 
         "predis/predis": "~1.0",
