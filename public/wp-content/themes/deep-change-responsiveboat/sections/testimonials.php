@@ -166,9 +166,9 @@ else:
                     echo '<div class="col-md-12">';
 
                         echo '<div id="sponsors" class="owl-carousel owl-theme">';
-                            echo '<img src="https://s3-us-west-1.amazonaws.com/real-currents/deep-change/uploads/2018/sponsors/Execusuite+Logo.jpg" title="Execusuite LLC" />';
-                            echo '<img src="https://s3-us-west-1.amazonaws.com/real-currents/deep-change/uploads/2018/sponsors/MSB+Logo.jpg" title="Mascoma Bank Foundation" />';
                             echo '<img src="https://s3-us-west-1.amazonaws.com/real-currents/deep-change/uploads/2018/sponsors/New+England+Grassroots.png" title="New England Grassroots Environment Fund" />';
+                            echo '<img src="https://s3-us-west-1.amazonaws.com/real-currents/deep-change/uploads/2018/sponsors/Mascoma_Foundation_Logo_Horizontal_500px.png" title="Mascoma Bank Foundation" />';
+                            echo '<img src="https://s3-us-west-1.amazonaws.com/real-currents/deep-change/uploads/2018/sponsors/Execusuite+Logo.jpg" title="Execusuite LLC" />';
 //                            echo '<img src="" title="" />';
 
                         echo '</div>';
