@@ -132,13 +132,6 @@ else:
 					echo '<h2 class="black-text">'.esc_attr( $zerif_testimonials_title ).'</h2>';
 				endif;
 
-				/* subtitle */
-				$zerif_testimonials_subtitle = get_theme_mod('zerif_testimonials_subtitle');
-
-				if( !empty($zerif_testimonials_subtitle) ):
-					echo '<h6 class="black-text">'.esc_attr( $zerif_testimonials_subtitle ).'</h6>';
-				endif;
-
 			echo '</div><!-- .section-header -->';
 
 			echo '<div class="row" data-scrollreveal="enter right after 0s over 1s">';
@@ -149,11 +142,11 @@ else:
 
 						if(is_active_sidebar( 'sidebar-testimonials' )):
 							dynamic_sidebar( 'sidebar-testimonials' );
-						else:
-
-							the_widget( 'zerif_testimonial_widget','title=Dana Lorem&text=Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur nec sem vel sapien venenatis mattis non vitae augue. Nullam congue commodo lorem vitae facilisis. Suspendisse malesuada id turpis interdum dictum.&image_uri='.get_stylesheet_directory_uri().'/images/testimonial1.jpg' );
-							the_widget( 'zerif_testimonial_widget','title=Linda Guthrie&text=Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur nec sem vel sapien venenatis mattis non vitae augue. Nullam congue commodo lorem vitae facilisis. Suspendisse malesuada id turpis interdum dictum.&image_uri='.get_stylesheet_directory_uri().'/images/testimonial2.jpg' );
-							the_widget( 'zerif_testimonial_widget','title=Cynthia Henry&text=Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur nec sem vel sapien venenatis mattis non vitae augue. Nullam congue commodo lorem vitae facilisis. Suspendisse malesuada id turpis interdum dictum.&image_uri='.get_stylesheet_directory_uri().'/images/testimonial3.jpg' );
+//						else:
+//
+//							the_widget( 'zerif_testimonial_widget','title=Dana Lorem&text=Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur nec sem vel sapien venenatis mattis non vitae augue. Nullam congue commodo lorem vitae facilisis. Suspendisse malesuada id turpis interdum dictum.&image_uri='.get_stylesheet_directory_uri().'/images/testimonial1.jpg' );
+//							the_widget( 'zerif_testimonial_widget','title=Linda Guthrie&text=Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur nec sem vel sapien venenatis mattis non vitae augue. Nullam congue commodo lorem vitae facilisis. Suspendisse malesuada id turpis interdum dictum.&image_uri='.get_stylesheet_directory_uri().'/images/testimonial2.jpg' );
+//							the_widget( 'zerif_testimonial_widget','title=Cynthia Henry&text=Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur nec sem vel sapien venenatis mattis non vitae augue. Nullam congue commodo lorem vitae facilisis. Suspendisse malesuada id turpis interdum dictum.&image_uri='.get_stylesheet_directory_uri().'/images/testimonial3.jpg' );
 
 						endif;
 
@@ -162,6 +155,28 @@ else:
 				echo '</div><!-- .col-md-12 -->';
 				
 			echo '</div><!-- .row -->';
+
+            /* subtitle: our sponsors */
+            $zerif_testimonials_subtitle = get_theme_mod('zerif_testimonials_subtitle');
+
+            if( !empty($zerif_testimonials_subtitle) ):
+                echo '<h3>'.esc_attr( $zerif_testimonials_subtitle ).'</h3>';
+
+                if(is_active_sidebar( 'sidebar-testimonials' )):
+                    echo '<div class="col-md-12">';
+
+                        echo '<div id="sponsors" class="owl-carousel owl-theme">';
+                            echo '<img src="https://s3-us-west-1.amazonaws.com/real-currents/deep-change/uploads/2018/sponsors/Execusuite+Logo.jpg" title="Execusuite LLC" />';
+                            echo '<img src="https://s3-us-west-1.amazonaws.com/real-currents/deep-change/uploads/2018/sponsors/MSB+Logo.jpg" title="Mascoma Bank Foundation" />';
+                            echo '<img src="https://s3-us-west-1.amazonaws.com/real-currents/deep-change/uploads/2018/sponsors/New+England+Grassroots.png" title="New England Grassroots Environment Fund" />';
+//                            echo '<img src="" title="" />';
+
+                        echo '</div>';
+
+                    echo '</div>';
+                endif;
+
+            endif;
 
 		echo '</div><!-- .container -->';
 
